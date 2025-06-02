@@ -1,0 +1,120 @@
+<section id="conditions">
+
+    <section>
+        <h2>Conditions</h2>
+    </section>
+
+    <section>
+        <h3>Conditions</h3>
+        <p>
+            En Python, les conditions sont définies à l'aide des mots-clés <code>if</code>, <code>elif</code> et
+            <code>else</code> :
+        </p>
+        <pre><code class="language-python">age: int = 18
+
+if age < 18:
+    print("Vous êtes mineur.")
+elif age == 18:
+    print("Vous êtes majeur.")
+else:
+    print("Vous êtes majeur.")</code></pre>
+        <footer>
+            <a href="#" class="warning" style="font-size: 0.7em">
+                Le langage Python utilise l'indentation pour définir les blocs de code (pas d'accolades).
+            </a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Opérateurs de comparaison</h3>
+        <p>
+            Les opérateurs de comparaison en Python sont les suivants :
+        </p>
+        <ul>
+            <li><code class="language-python">==</code> : égal à</li>
+            <li><code class="language-python">!=</code> : différent de</li>
+            <li><code class="language-python">&lt;</code> : inférieur à</li>
+            <li><code class="language-python">&gt;</code> : supérieur à</li>
+            <li><code class="language-python">&lt;=</code> : inférieur ou égal à</li>
+            <li><code class="language-python">&gt;=</code> : supérieur ou égal à</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Opérateurs logiques</h3>
+        <p>
+            Les opérateurs logiques en Python sont les suivants :
+        </p>
+        <ul>
+            <li><code class="language-python">and</code> : et</li>
+            <li><code class="language-python">or</code> : ou</li>
+            <li><code class="language-python">not</code> : non</li>
+        </ul>
+        <p>
+            Exemple d'utilisation des opérateurs logiques :
+        </p>
+        <pre><code class="language-python">birth_year: int = 2000
+is_male: bool = True
+
+if birth_year < 2000 and birth_year > 1900:
+    print("Vous êtes né au 20ème siècle.")
+if not is_male:
+    print("Vous n'êtes pas un homme.")</code></pre>
+        <p>
+            Le langage Python permet d'écrire plus simplement la condition précédente :
+        </p>
+        <pre><code class="language-python">if 1900 < birth_year < 2000:</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <div class="container">
+            <div class="col" style="flex: 2">
+                <div class="instructions">
+                    <ol>
+                        <li>
+                            Écrire un POC d'un programme en Python permettant de contrôler une maison connectée.
+                        </li>
+                        <li>
+                            Aidez-vous du diagramme d'activité ci-contre pour définir les différentes étapes du programme.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col">
+                <a href="assets/images/activity-domotique.drawio.png" target="_blank">
+                    <img src="assets/images/activity-domotique.drawio.png" alt="Domotique">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python pour vérifier si un nombre est un octet ou non.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Demander à l'utilisateur de saisir un nombre.
+                </li>
+                <li>
+                    Vérifier si la saisie est bien un nombre entier.
+                </li>
+                <li>
+                    Vérifier si le nombre est compris entre 0 et 255 (inclus).
+                </li>
+                <li>
+                    Afficher un message indiquant si le nombre est un octet ou non.
+                </li>
+                <li>
+                    🏆 Bonus : Afficher la représentation binaire du nombre si c'est un octet.<br>
+                    Pour cela, vous pouvez utiliser les f-strings :
+                    <pre><code class="language-python">octet_bin = f'{255:08b}'  # Convertit 255 en binaire sur 8 bits</code></pre>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+</section>

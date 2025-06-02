@@ -1,0 +1,271 @@
+<section id="collections">
+
+    <section>
+        <h2>Collections</h2>
+    </section>
+
+    <section>
+        <h3>Collections</h3>
+        <p>
+            En Python, il existe plusieurs types permettant de stocker des collections d'éléments :
+        </p>
+        <ul>
+            <li>
+                <strong>Listes</strong> : collections ordonnées d'éléments
+            </li>
+            <li>
+                <strong>Tuples</strong> : collections ordonnées et immuables d'éléments
+            </li>
+            <li>
+                <strong>Set</strong> : collections non ordonnées d'éléments uniques
+            </li>
+            <li>
+                <strong>Dictionnaires</strong> : collections d'éléments indexés par des clés (key/value pairs)
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Listes</h3>
+        <p>
+            En Python, les listes sont des collections ordonnées d'éléments :
+        </p>
+        <pre><code class="language-python">fruits: list[str] = ["apple", "banana", "cherry"] # Créer une liste
+fruits[1] = "orange" # Modifier un élément
+fruits.append("pear") # Ajouter un élément
+fruits.remove("cherry") # Supprimer un élément
+print(fruits[1]) # Accéder à un élément</code></pre>
+        <footer>
+            <a href="https://docs.python.org/3/tutorial/datastructures.html" class="info" target="_blank">
+                Autres opérations sur les listes
+            </a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Tuples</h3>
+        <p>
+            En Python, les tuples sont des collections ordonnées et immuables d'éléments :
+        </p>
+        <pre><code class="language-python">fruits: list[str] = ("apple", "banana", "cherry") # Créer un tuple
+print(fruits[1]) # Accéder à un élément</code></pre>
+        <p>
+            Les tuples sont immuables, ce qui signifie qu'une fois qu'ils sont créés, ils ne peuvent pas être modifiés.
+        </p>
+    </section>
+
+    <section>
+        <h3>Set</h3>
+        <p>
+            En Python, les sets sont des collections non ordonnées d'éléments uniques :
+        </p>
+        <pre><code class="language-python">fruits: list[str] = {"apple", "banana", "cherry"} # Créer un set
+fruits.add("orange") # Ajouter un élément
+fruits.remove("banana") # Supprimer un élément
+fruits.add("apple") # ⚠️ Les éléments en double ne sont pas autorisés !!
+print(fruits)</code></pre>
+    </section>
+
+    <section>
+        <h3>Dictionnaires</h3>
+        <p>
+            En Python, les dictionnaires sont des collections d'éléments indexés par des clés (key/value pairs) :
+        </p>
+        <pre><code class="language-python">person = {
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+print(person["age"])</code></pre>
+        <p>
+            Un dictionnaire peut contenir des éléments de différents types (int, str, list, dict...). Cela peut
+            permettre de représenter des données complexes :
+        </p>
+        <pre><code class="language-python">person = {
+    "name": "John",
+    "age": 30,
+    "children": [
+        {"name": "Alice", "age": 5},
+        {"name": "Bob", "age": 7}
+    ]
+}</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire une fonction Python qui prend en paramètre le chemin d'un fichier de configuration YAML et
+            indique si la connexion utilise SSL ou non.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Importer la librairie <code class="language-python">yaml</code> pour lire les fichiers YAML.
+                    <pre><code class="language-shell">pip install pyyaml</code></pre>
+                </li>
+                <li>
+                    Ouvrir le fichier de configuration passé en paramètre du programme et lire son contenu.
+                </li>
+                <li>
+                    Vérifier si la clé <code>protocol</code> est définie et si sa valeur est <code>https</code>.
+                </li>
+            </ol>
+        </div>
+        <p>
+            Voici un exemple de fichier de configuration YAML :
+        </p>
+        <pre><code class="language-yaml">server:
+    host: localhost
+    port: 8080
+    protocol: https</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python permettant de remonter une alerte lorsqu'une erreur est présente dans un fichier
+            log Apache.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Ouvrir le fichier de log Apache passé en paramètre du programme.
+                </li>
+                <li>
+                    Lire le contenu du fichier ligne par ligne.
+                </li>
+                <li>
+                    Vérifier si la ligne est un log de niveau "error".
+                </li>
+                <li>
+                    Si une erreur est trouvée, afficher un message d'alerte avec la ligne contenant l'erreur.
+                </li>
+                <li>
+                    🏆 Bonus : Afficher le nombre total d'erreurs trouvées dans le fichier.
+                </li>
+            </ol>
+        </div>
+        <p>
+            Voici un exemple de fichier de log Apache :
+        </p>
+        <pre style="max-height: 200px;"><code class="language-txt">[Sun Dec 04 04:47:44 2005] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties
+[Sun Dec 04 04:47:44 2005] [error] mod_jk child workerEnv in error state 6
+[Sun Dec 04 04:51:08 2005] [notice] jk2_init() Found child 6725 in scoreboard slot 10
+[Sun Dec 04 04:51:09 2005] [notice] jk2_init() Found child 6726 in scoreboard slot 8
+[Sun Dec 04 04:51:09 2005] [notice] jk2_init() Found child 6728 in scoreboard slot 6
+[Sun Dec 04 04:51:14 2005] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties
+[Sun Dec 04 04:51:14 2005] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties
+[Sun Dec 04 04:51:14 2005] [notice] workerEnv.init() ok /etc/httpd/conf/workers2.properties
+[Sun Dec 04 04:51:14 2005] [warn] pid file httpd.pid overwritten
+[Sun Dec 04 04:51:18 2005] [error] mod_jk child workerEnv in error state 6</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice - Arbre généalogique</h3>
+        <pre style="max-height: 200px"><code class="language-python">family = {
+    "name": "John",
+    "age": 98,
+    "children": [
+        {
+            "name": "Alice",
+            "age": 70,
+            "children": [
+                {
+                    "name": "David",
+                    "age": 45,
+                    "children": [
+                        {
+                            "name": "Emma",
+                            "age": 20,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Bob",
+            "age": 65,
+            "children": [
+                {
+                    "name": "Eve",
+                    "age": 30,
+                    "children": []
+                },
+                {
+                    "name": "Grace",
+                    "age": 25,
+                    "children": []
+                }
+            ]
+        }
+    ]
+}</code></pre>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Écrire un programme Python qui affiche l'arbre généalogique de la famille ci-dessus.
+                </li>
+                <li>
+                    Utiliser une fonction récursive pour parcourir l'arbre.
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Exercice - Deviner la hauteur</h3>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Écrire un programme Python qui demande à l'utilisateur de deviner la hauteur de la tour Eiffel.
+                </li>
+                <li>
+                    Si la réponse de l'utilisateur est inférieure à 300 mètres, afficher "Trop bas !" sinon afficher
+                    "Trop haut !".
+                </li>
+                <li>
+                    Proposer aléatoirement de deviner la hauteur d'autres monuments célèbres
+                    (Tour de Pise, Empire State...).
+                </li>
+                <li>
+                    Quitter le programme si l'utilisateur saisit "exit".
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python pour indiquer si une adresse IP fait partie d'une plage d'adresses IP privées.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Définir dans une liste les plages d'adresses IP privées suivantes :
+                    <ul>
+                        <li>10.0.0.0/8 (IP commence par 10)</li>
+                        <li>172.16.0.0/12 (IP commence par 172.16 à 172.31)</li>
+                        <li>192.168.0.0/16 (IP commence par 192.168)</li>
+                    </ul>
+                </li>
+                <li>
+                    Demander à l'utilisateur de saisir une adresse IP en paramètre de la ligne de commande.
+                </li>
+                <li>
+                    Afficher un message indiquant si l'adresse IP est privée ou non.
+                </li>
+            </ol>
+        </div>
+        <pre><code class="language-shell">python check_private_ip.py 192.168.1.10</code></pre>
+        <pre><code class="language-txt">Adresse IP : 192.168.1.10
+Adresse privée : Oui ✅</code></pre>
+        <p>
+            Pour rappel, /12 est le masque de sous-réseau et signifie que les 12 premiers bits de l'adresse IP sont
+            utilisés pour le réseau, et le reste pour les hôtes.
+            Il s'agit d'une notation <abbr title="Classless Inter-Domain Routing">CIDR</abbr>.
+        </p>
+    </section>
+
+</section>

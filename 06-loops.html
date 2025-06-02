@@ -1,0 +1,108 @@
+<section id="loops">
+
+    <section>
+        <h2>Boucles</h2>
+    </section>
+
+    <section>
+        <h3>Boucles</h3>
+        <p>
+            Il existe deux types de boucles en Python : la boucle <code>while</code> (tant que)
+            et la boucle <code>for</code> (pour).
+        </p>
+        <p>
+            Voici un exemple de boucle <code>while</code> :
+        </p>
+        <pre><code class="language-python">i: int = 1
+while i < 6:
+    print(i)
+    i += 1</code></pre>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Écrire un programme Python qui affiche "3 2 1 Bonne année !" en utilisant une boucle <code>while</code>.
+                </li>
+                <li>
+                    Ajouter une pause de 1 seconde entre chaque affichage.
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Boucles</h3>
+        <p>
+            Voici un exemple de boucle <code>for</code> :
+        </p>
+        <pre><code class="language-python">for i in range(6):
+    print(i)</code></pre>
+        <p>
+            En Python, la boucle <code>for</code> est utilisée pour parcourir des collections d'éléments
+            (listes, tuples, sets, dictionnaires...) :
+        </p>
+        <pre><code class="language-python">fruits: list[str] = ["apple", "banana", "cherry"] # list[str] signifie que la liste contient des chaînes de caractères
+for fruit in fruits:
+    print(fruit)</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python pour vérifier si une adresse IP est valide.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Demander à l'utilisateur de saisir une adresse IP.
+                </li>
+                <li>
+                    Vérifier si l'adresse IP est valide en vérifiant qu'elle respecte le format IPv4 :
+                    <ul>
+                        <li>Quatre valeurs séparées par des points.</li>
+                        <li>Chaque valeur doit être un entier compris entre 0 et 255.</li>
+                        <li>La première valeur ne doit pas être 0.</li>
+                    </ul>
+                </li>
+                <li>
+                    Afficher un message indiquant si l'adresse IP est valide ou non.
+                </li>
+            </ol>
+        </div>
+        <p>
+            Pour extraire chaque octet de l'adresse IP, vous pouvez utiliser la méthode <code class="language-python">split()</code> :
+        </p>
+        <pre><code class="language-python">fruits: str = "apple, banana, cherry"
+valeurs: list[str] = fruits.split(", ")  # Sépare la chaîne de caractères en une liste de chaînes</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python qui indique si des adresses IP sont autorisées sur un réseau.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Créer une liste d'adresses IP autorisées.
+                </li>
+                <li>
+                    Récupérer une liste d'adresses IP saisies par l'utilisateur en argument de la ligne de commande.
+                </li>
+                <li>
+                    Vérifier si chaque adresse IP saisie est dans la liste des adresses autorisées.
+                </li>
+                <li>
+                    Pour chaque adresse IP saisie, afficher un message indiquant si elle est autorisée ou non.
+                </li>
+                <li>
+                    🏆 Bonus : Récupérer la liste des adresses IP autorisées depuis un fichier texte.
+                </li>
+            </ol>
+        </div>
+        <pre><code class="language-shell">python check_ip.py 192.168.1.10 192.168.1.20 10.0.0.5</code></pre>
+        <pre><code class="language-txt">192.168.1.10 est autorisée ✅
+192.168.1.20 est refusée ❌
+10.0.0.5 est autorisée ✅</code></pre>
+    </section>
+
+</section>

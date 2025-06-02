@@ -1,0 +1,87 @@
+<section id="dependencies">
+
+    <section>
+        <h2>Dépendances</h2>
+    </section>
+
+    <section>
+        <h3>Gestion des dépendances</h3>
+        <p>
+            En Python, les dépendances sont gérées à l'aide du gestionnaire de paquets <code>pip</code>.
+        </p>
+        <p>
+            Pour installer un paquet, vous pouvez utiliser la commande suivante :
+        </p>
+        <pre><code class="language-shell">pip install nom_du_paquet</code></pre>
+    </section>
+
+    <section>
+        <h3>Environnement virtuel</h3>
+        <p>
+            Il est recommandé d'utiliser un <strong>environnement virtuel</strong> pour isoler les dépendances de votre
+            projet.
+        </p>
+        <p>
+            Un environnement virtuel permet d'<strong>isoler les paquets installés</strong> pour un projet spécifique,
+            évitant ainsi les conflits entre différentes versions de paquets.
+        </p>
+        <p>
+            Il est également possible de spécifier la <strong>version de Python</strong> à utiliser dans l'environnement
+            virtuel.
+        </p>
+    </section>
+
+    <section>
+        <h3>Environnement virtuel</h3>
+        <p>
+            Pour créer un environnement virtuel, vous pouvez utiliser la commande suivante :
+        </p>
+        <pre><code class="language-shell">python -m venv .venv</code></pre>
+        <p>
+            Cette commande crée un dossier nommé <code>.venv</code> dans le répertoire courant, contenant
+            l'environnement virtuel.
+        </p>
+        <p>
+            Pour activer l'environnement virtuel, utilisez la commande suivante :
+        </p>
+        <pre><code class="language-shell">source .venv/bin/activate</code></pre>
+        <footer>
+            <a href="#" class="info">
+                <code class="langage-shell">.venv</code> est le nom de l'environnement virtuel (dossier créé).
+            </a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Environnement virtuel avec VSCode</h3>
+        <p>
+            Si vous utilisez Visual Studio Code, vous pouvez configurer l'environnement virtuel en ouvrant le
+            panneau de commande (<span class="keyboard-key">Ctrl</span> + <span class="keyboard-key">Shift</span> +
+            <span class="keyboard-key">P</span>) et en sélectionnant "Python: Select Interpreter".
+        </p>
+        <footer>
+            <a href="https://code.visualstudio.com/docs/python/environments#_creating-environments" class="info" target="_blank">
+                Documentation de Visual Studio Code sur les environnements Python
+            </a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Installation des dépendances</h3>
+        <p>
+            Pour installer les dépendances d'un projet, vous pouvez utiliser un fichier <code>requirements.txt</code>.
+        </p>
+        <p>
+            Pour créer ce fichier, vous pouvez utiliser la commande suivante :
+        </p>
+        <pre><code class="language-shell">pip freeze > requirements.txt</code></pre>
+        <p>
+            Pour installer les dépendances à partir de ce fichier, utilisez la commande suivante :
+        </p>
+        <pre><code class="language-shell">pip install -r requirements.txt</code></pre>
+        <p>
+            Cela installera toutes les dépendances listées dans le fichier <code>requirements.txt</code>.
+        </p>
+    </section>
+
+</section>

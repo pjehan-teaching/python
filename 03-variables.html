@@ -1,0 +1,237 @@
+<section id="presentation">
+
+    <section>
+        <h2>Variables</h2>
+    </section>
+
+    <section>
+        <h3>Hello world</h3>
+        <p>
+            Voici un exemple de programme Python qui affiche "Hello, World!" dans la console :
+        </p>
+        <pre><code class="language-python">print("Hello, World!")</code></pre>
+        <p>
+            Pour exécuter ce programme, vous pouvez utiliser la commande suivante :
+        </p>
+        <pre><code class="language-bash">python hello.py</code></pre>
+    </section>
+
+    <section>
+        <h3>Variables</h3>
+        <p>
+            En Python, les variables sont <strong>dynamiquement typées</strong>, ce qui signifie que vous n'avez pas
+            besoin de déclarer le type d'une variable avant de l'utiliser.
+        </p>
+        <p>
+            Voici un exemple de déclaration de variables en Python :
+        </p>
+        <pre><code class="language-python">a = 5
+b = "Hello, World!"
+c = 3.14
+
+print(type(b))</code></pre>
+        <footer>
+            <a href="https://docs.python.org/fr/3.10/library/typing.html" target="_blank" class="info">
+                Annotations de type en Python
+            </a>
+        </footer>
+    </section>
+
+    <section>
+        <h3>Typehint</h3>
+        <p>
+            Depuis Python 3.5, il est possible d'ajouter des annotations de type aux fonctions et aux variables :
+        </p>
+        <pre><code class="language-python">def add(a: int, b: int) -> int: # La fonction add prend deux entiers en paramètre et retourne un entier
+    return a + b</code></pre>
+        <p>
+            Attention ! Les annotations de type ne sont <strong>pas vérifiées par l'interpréteur Python</strong>, elles
+            sont simplement là pour documenter le code.
+        </p>
+    </section>
+
+    <section>
+        <h3>Types de données</h3>
+        <p>
+            Python supporte plusieurs types de données :
+        </p>
+        <ul>
+            <li><strong>int</strong> : entier</li>
+            <li><strong>float</strong> : nombre à virgule flottante</li>
+            <li><strong>str</strong> : chaîne de caractères</li>
+            <li><strong>bool</strong> : booléen</li>
+        </ul>
+        <p>
+            Ainsi que d'autres types de données pour gérer des collections d'éléments :
+        </p>
+        <ul>
+            <li><strong>list</strong> : liste</li>
+            <li><strong>tuple</strong> : tuple</li>
+            <li><strong>set</strong> : ensemble</li>
+            <li><strong>dict</strong> : dictionnaire</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>Commentaires</h3>
+        <p>
+            En Python, les commentaires sont précédés du caractère <code class="language-python">#</code> :
+        </p>
+        <pre><code class="language-python"># Ceci est un commentaire
+print("Hello, World!")</code></pre>
+        <p>
+            Vous pouvez également utiliser des commentaires multilignes en utilisant des triples guillemets :
+        </p>
+        <pre><code class="language-python">"""
+Ceci est un commentaire
+sur plusieurs lignes
+"""
+print("Hello, World!")</code></pre>
+    </section>
+
+    <section>
+        <h3>Saisi utilisateur</h3>
+        <p>
+            Pour demander une saisie à l'utilisateur, vous pouvez utiliser la fonction <code>input()</code> :
+        </p>
+        <pre><code class="language-python">name: str = input("Quel est votre nom ? ")
+print("Bonjour, " + name)</code></pre>
+        <p>
+            On remarque que la fonction <code class="language-python">input()</code> renvoie toujours une chaîne de
+            caractères et que le caractère <code class="language-python">+</code> permet de concaténer des chaînes de
+            caractères.
+        </p>
+    </section>
+
+    <section>
+        <h3>Saisi utilisateur - Conversion de type</h3>
+        <p>
+            Pour convertir une chaîne de caractères en un autre type de données, vous pouvez utiliser les fonctions
+            suivantes :
+        </p>
+        <ul>
+            <li><code class="language-python">int()</code> : convertit une chaîne de caractères en un entier</li>
+            <li><code class="language-python">float()</code> : convertit une chaîne de caractères en un nombre à virgule flottante</li>
+            <li><code class="language-python">str()</code> : convertit un entier ou un nombre à virgule flottante en une chaîne de caractères</li>
+        </ul>
+        <pre><code class="language-python">age: int = int(input("Quel est votre âge ? "))
+age += 1
+print("Vous aurez " + str(age) + " ans l'année prochaine.")</code></pre>
+    </section>
+
+    <section>
+        <h3>Conversion de type - Gestion erreur</h3>
+        <p>
+            Il est important de gérer les erreurs lors de la conversion de type, car l'utilisateur peut saisir une
+            valeur qui ne peut pas être convertie en entier ou en nombre à virgule flottante.
+        </p>
+        <pre><code class="language-python">try:
+    age: int = int(input("Quel est votre âge ? "))
+except ValueError:
+    print("Veuillez saisir un nombre entier.")
+    raise TypeError("L'âge doit être un entier.")
+else:
+    age += 1
+    print("Vous aurez " + str(age) + " ans l'année prochaine.")</code></pre>
+        <p>
+            Dans cet exemple, si l'utilisateur saisit une valeur qui ne peut pas être convertie en entier, une
+            exception <code class="language-python">ValueError</code> est levée et le message d'erreur est affiché.
+        </p>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Dans cet exercice, vous allez créer un programme qui va calculer la bande passante nécessaire pour
+            connecter plusieurs ordinateurs à un réseau local.
+        </p>
+        <div class="instructions">
+           <ol>
+               <li>
+                   Demandez à l'utilisateur de saisir le nombre d'ordinateurs connectés au réseau local.
+               </li>
+                <li>
+                     Demandez à l'utilisateur de saisir la bande passante totale du réseau local en Mbps.
+                </li>
+                <li>
+                     Calculez la bande passante qui sera allouée à chaque ordinateur.
+                </li>
+           </ol>
+        </div>
+        <pre><code class="language-txt">Combien de périphériques sont connectés ? 4
+Quelle est la bande passante totale du réseau local (en Mbps) ? 100
+Chaque périphérique aura une bande passante de 25.0 Mbps.</code></pre>
+    </section>
+
+    <section>
+        <h3>Chaines de caractères formatées (f-strings)</h3>
+        <p>
+            Depuis Python 3.6, il est possible d'utiliser des f-strings pour
+            <strong>formater des chaînes de caractères</strong> :
+        </p>
+        <pre><code class="language-python">name: str = input("Quel est votre nom ? ")
+print(f"Bonjour, {name} !")</code></pre>
+        <p>
+            Cela permet d'insérer des variables directement dans une chaîne de caractères en les entourant
+            d'accolades <code class="language-python">{}</code>.
+        </p>
+        <p>
+            Vous pouvez également utiliser des <strong>expressions</strong> dans les f-strings :
+        </p>
+        <pre><code class="language-python">age: int = int(input("Quel est votre âge ? "))
+print(f"Vous aurez {age + 1} ans l'année prochaine.")</code></pre>
+    </section>
+
+    <section>
+        <h3>Arguments du programme</h3>
+        <p>
+            Il est possible de passer des arguments à un script Python depuis la ligne de commande en utilisant le
+            module <code class="language-python">sys</code> :
+        </p>
+        <pre><code class="language-python">import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python script.py &lt;nom&gt;")
+    sys.exit(1)
+
+print(f"Bonjour, {sys.argv[1]} !")</code></pre>
+        <p>
+            Dans cet exemple, le script attend un argument qui sera affiché dans la console. Si l'argument n'est pas
+            fourni, un message d'utilisation est affiché et le script se termine avec un code d'erreur.
+        </p>
+        <p>
+            Le <strong>premier élément</strong> de la liste <code class="language-python">sys.argv</code> est toujours
+            le <strong>nom du script</strong>, donc l'argument attendu est le <strong>deuxième élément</strong> (index 1).
+        </p>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire un programme Python pour estimer le temps de propagation d’un paquet sur une liaison réseau.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    En paramètre de la ligne de commande, demander à l'utilisateur de saisir la distance en km entre
+                    les deux points ainsi que la vitesse de propagation du signal en km/ms.
+                </li>
+                <li>
+                    Calculer le temps de propagation en ms en utilisant la formule :
+                    <code class="language-txt">temps = distance / vitesse</code>.
+                </li>
+                <li>
+                    🥇 Bonus : Afficher le résultat avec une précision de 2 décimales.
+                </li>
+                <li>
+                    🏆 Super bonus : Convertir le temps de propagation en secondes si la valeur est supérieure à 1000 ms.
+                </li>
+            </ol>
+        </div>
+        <pre><code class="language-txt">python propagation.py 1000 200
+Distance : 1000 km
+Vitesse : 200 km/ms
+Temps de propagation : 5.00 ms</code></pre>
+    </section>
+
+</section>

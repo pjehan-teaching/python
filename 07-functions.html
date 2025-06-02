@@ -1,0 +1,145 @@
+<section id="functions">
+
+    <section>
+        <h2>Fonctions</h2>
+    </section>
+
+    <section>
+        <h3>Fonctions</h3>
+        <p>
+            En Python, les fonctions sont définies à l'aide du mot-clé <code>def</code> :
+        </p>
+        <pre><code class="language-python">def greet(name: str) -> None:
+    print("Hello, " + name)
+
+greet("World")</code></pre>
+    </section>
+
+    <section>
+        <h3>Fonctions</h3>
+        <p>
+            Une fonction peut retourner une valeur à l'aide du mot-clé <code>return</code> :
+        </p>
+        <pre><code class="language-python">def add(a: int, b: int) -> int:
+    return a + b
+
+result: int = add(5, 3)
+print(result)</code></pre>
+    </section>
+
+    <section>
+        <h3>Exercice</h3>
+        <p>
+            Écrire une fonction Python qui prend une adresse IP en paramètre et retourne <code>True</code>
+            si l'adresse IP est valide, sinon <code>False</code>.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Demander à l'utilisateur de saisir une adresse IP.
+                </li>
+                <li>
+                    Vérifier si l'adresse IP est valide en vérifiant qu'elle respecte le format IPv4 :
+                    <ul>
+                        <li>Quatre valeurs séparées par des points.</li>
+                        <li>Chaque valeur doit être un entier compris entre 0 et 255.</li>
+                        <li>La première valeur ne doit pas être 0.</li>
+                    </ul>
+                </li>
+                <li>
+                    Afficher un message indiquant si l'adresse IP est valide ou non.
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section>
+        <h3>Exerice</h3>
+        <p>
+            Écrire une fonction Python permettant de retourner le niveau (notice, warn, error...) d'une ligne de log Apache.
+        </p>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Demander à l'utilisateur de saisir une ligne de log Apache.
+                </li>
+                <li>
+                    Vérifier si la ligne de log contient un niveau de log valide (notice, warn, error...).
+                </li>
+                <li>
+                    Afficher le niveau de log ou un message d'erreur si le niveau n'est pas reconnu.
+                </li>
+            </ol>
+        </div>
+        <p>
+            Voici un exemple de ligne de log Apache :
+        </p>
+        <pre><code class="language-txt">[Fri Dec 16 02:25:55 2005] [error] [client 1.2.3.4] Client sent malformed Host header</code></pre>
+    </section>
+
+    <section>
+        <h3>Récursivité</h3>
+        <p>
+            La récursivité est une technique de programmation dans laquelle une fonction s'appelle elle-même.
+        </p>
+        <p>
+            Voici un code en Python qui calcule la factorielle d'un nombre en utilisant une boucle while VS la récursivité :
+        </p>
+        <div class="container">
+            <div class="col">
+                <h4>Boucle while</h4>
+                <pre><code class="language-python">num: int = 5
+fact: int = 1
+
+while num > 0:
+    fact = fact * num
+    num = num - 1
+
+print(fact)</code></pre>
+            </div>
+            <div class="col">
+                <h4>Récursivité</h4>
+                <pre><code class="language-python">def factorial(n: int):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Récursivité</h3>
+        <div class="instructions">
+            <ol>
+                <li>
+                    Écrire un programme Python qui va générer automatiquement des fichiers de log.
+                </li>
+                <li>
+                    Le premier fichier de log doit s'appeler "log.txt", le deuxième "log_1.txt", "log_2.txt"...
+                    jusqu'à log_10.txt.
+                </li>
+                <li>
+                    Essayer de gérer les générations de fichier après log_10.txt.
+                </li>
+            </ol>
+        </div>
+        <p>
+            Pour créer un fichier, vous pouvez utiliser la fonction <code>open()</code> :
+        </p>
+        <pre><code class="language-python">import datetime
+import typing
+
+f: typing.TextIO = open("log.txt", "w")
+f.write("Log file created on " + str(datetime.datetime.now()))
+f.close()</code></pre>
+        <p>
+            Vous aurez également besoin de la librairie <code class="language-python">os</code>
+            pour lister les fichiers d'un répertoire, vérifier si un fichier existe et extraire l'extension du
+            nom de fichier.
+        </p>
+    </section>
+
+</section>
